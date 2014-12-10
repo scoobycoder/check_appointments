@@ -17,8 +17,9 @@ module CheckAppointments
       api_url = "/rest/appointments/#{CheckAppointments.api_key}/all/all"
       time_stamp = Time.now.utc.to_i
       sig = create_signature( CheckAppointments.api_key + CheckAppointments.private_key + time_stamp.to_s + api_url )
-      response =  RestClient.get CheckAppointments.base_url + api_url ,
-                                  {:params => {:apiKey => CheckAppointments.api_key, :timestamp => time_stamp, :signature => sig }}
+      # response =  RestClient.get CheckAppointments.base_url + api_url ,
+      #                             {:params => {:apiKey => CheckAppointments.api_key, :timestamp => time_stamp, :signature => sig }}
+      response = RestClient::Request.execute :method => :get, :url => CheckAppointments.base_url + api_url, :payload => {:apiKey => CheckAppointments.api_key, :timestamp => time_stamp, :signature => sig}, :ssl_version => 'TLSv1'
 
       appointments = JSON.parse(response)
       response = []
