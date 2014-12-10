@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{check_appointments}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
   s.date = %q{2014-02-11}
   s.summary = %q{Gem that interfaces with the CheckAppointments API}
   s.files = Dir["README.md","Gemfile","Rakefile", "lib/**/*"]
