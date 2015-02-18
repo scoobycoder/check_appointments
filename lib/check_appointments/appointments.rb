@@ -4,15 +4,7 @@ module CheckAppointments
       Digest::MD5.hexdigest( body )
     end
 
-    # Returns array of :
-    # {"calendarId"=>int, "businessId"=>int, "date"=>"2014-02-11", "startTime"=>int, "endTime"=>int,
-    #  "staffTimeText"=>"Tuesday, Feb 11, 2014 at 6:00 PM EST", "client"=>{"clientId"=>int, "fullName"=>string,
-    #  "firstName"=>string, "lastName"=>string, "dateOfBirth"=>string, "sex"=>string, "ssn"=>string, "emailAddress"=>string,
-    #  "address1"=>string, "address2"=>string, "city"=>string, "county"=>string, "state"=>string, "zip"=>string, "country"=>string,
-    #  "homePhone"=>string, "cellPhone"=>string, "createdDate"=>"2013-10-16 18:20:38"}, "staff"=>{"professionalId"=>int,
-    #  "fullName"=>string, "userName"=>string, "email"=>string, "phone"=>string, "active"=>boolean, "acceptAppointments"=>boolean,
-    #  "businessId"=>int}, "location"=>{"locationId"=>int, "locationName"=>string, "businessId"=>int, "active"=>boolean,
-    #  "address1"=>string, "address2"=>string, "city"=>string, "state"=>string, "zip"=>string, "country"=>string}}
+    #  Parse with Hash.from_xml(a)
     def self.find_all
       api_url = "/rest/appointments/#{CheckAppointments.api_key}/all/all"
       time_stamp = Time.now.utc.to_i
@@ -24,6 +16,8 @@ module CheckAppointments
                      :signature => sig }}
 
       response
+      # Parse with hash = Hash.from_xml(response)
+      # appointments = hash["ArrayList"]["item"] returns an array of appointments (hashes)
     end
   end
 end

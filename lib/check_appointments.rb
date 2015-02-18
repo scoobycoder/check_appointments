@@ -1,5 +1,5 @@
 module CheckAppointments
-  require 'rest_client'
+  require 'rest-client'
   require 'mime-types'
   require 'rdoc'
   require 'json'
