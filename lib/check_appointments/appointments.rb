@@ -4,7 +4,6 @@ module CheckAppointments
       Digest::MD5.hexdigest( body )
     end
 
-    #  Parse with Hash.from_xml(a)
     def self.find_all
       api_url = "/rest/appointments/#{CheckAppointments.api_key}/all/all"
       time_stamp = Time.now.utc.to_i
