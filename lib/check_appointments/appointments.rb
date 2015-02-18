@@ -23,10 +23,6 @@ module CheckAppointments
                      :timestamp => time_stamp,
                      :signature => sig }}
 
-      appointments = JSON.parse(response)
-      response = []
-      appointments.each { |appointment| response << appointment }
-
       response
     end
   end
