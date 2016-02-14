@@ -29,7 +29,6 @@ Please feel free to help out in any way you can.  Make a suggestion, correct a t
 We use the GitHub Issue Tracker to track bugs and features.
 
 #Supported Rubies
-* Ruby = 1.8.7
 * Ruby >= 1.9
 
 #Todos
