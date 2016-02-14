@@ -16,7 +16,7 @@ module CheckAppointments
 
       response
       # Parse with hash = Hash.from_xml(response)
-      # appointments = hash["ArrayList"]["item"] returns an array of appointments (hashes)
+      # appointments = hash["ArrayList"]["item"] returns an array of hashes
     end
   end
 end
