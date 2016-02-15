@@ -3,22 +3,29 @@ A Ruby wrapper for the Check Appointments API
 
 ## <a name="installation">Installation</a>
 Add it to your Gemfile:
+```ruby
   gem 'check_appointments'
+```
 Run the following command to install it:
-  bundle install
+```console
+  $ bundle install
+```
 Or from the command line, run:
-  gem install check_appointments
+```console
+  $ gem install check_appointments
+```
 
 #Setup & Configuration
-1. Make an initializer by creating a file called check_appointments.rb in 'config\initializers' and adding the following to the file:
+1. Make an initializer by creating a file called check_appointments.rb in `config\initializers` and adding the following to the file:
 
-2. Add to `config\initializers`
+2. Add to `config\initializers\check_appointments.rb`
+```ruby
   CheckAppointments.configure do |config|
     config.api_key = 'YOUR_CHECK_APPOINTMENTS_API_KEY'
     config.private_key = 'YOUR_CHECK_APPOINTMENTS_PRIVATE_KEY'
     config.base_url = 'https://checkappointments.com/businessWeb'
   end
-
+```
 #Usage Example(s)
 Get all the appointments, this might take a while if you have a lot of them. `CheckAppointments::Appointment.find_all`
 
