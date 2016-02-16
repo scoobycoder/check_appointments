@@ -1,25 +1,5 @@
 #!/usr/bin/env rake
 require "bundler/gem_tasks"
-
-<<<<<<< HEAD
-task :default => [:build]
-
-desc "build_app" do
-  task :build do
-    bundle install
-    gem build check_appointments
-  end
-end
-
-desc "test application" do
-  task :spec do
-    p 'done'
-  end
-end
-
-
-
-=======
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
@@ -29,4 +9,3 @@ Rake::TestTask.new do |t|
 end
 
 task :default => :test
->>>>>>> travis_master/master
